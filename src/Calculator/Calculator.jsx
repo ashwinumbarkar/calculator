@@ -49,7 +49,7 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         </button>
         </>)
         
-        }<button className="backBtn" style={{gridColumn:"span 2"}}>Back</button></div>
+        }<button className="backBtn" style={{gridColumn:"span 2"}}>Backspace</button></div>
       
     </div>
     </>
