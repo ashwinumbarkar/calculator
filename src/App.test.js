@@ -203,3 +203,25 @@ test('percentage', () => {
   fireEvent.click(euqlBtn);
   expect(outputScreen.textContent).toBe('1');
 });
+
+test('with floating value', () => {
+  render(<Calculator />);
+
+  const numBtn1 = screen.getByText('1');
+  const numBtn2 = screen.getByText('3');
+  const operBtn = screen.getByText('/');
+  const euqlBtn = screen.getByText('=');
+  
+  fireEvent.click(numBtn1);
+  const outputScreen = screen.getByTestId('OutputScreen'); 
+  expect(outputScreen.textContent).toBe('1');
+  
+  fireEvent.click(operBtn);
+  expect(outputScreen.textContent).toBe('1/'); 
+  
+  fireEvent.click(numBtn2);
+  expect(outputScreen.textContent).toBe('1/3');
+
+  fireEvent.click(euqlBtn);
+  expect(outputScreen.textContent).toBe('0.333');
+});
