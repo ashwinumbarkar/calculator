@@ -34,7 +34,7 @@ To run this project locally, follow these steps:
 
 ### 1. Clone the Repository
 
-$ git clone https://github.com/ashwinumbarkar/TDD-Calculator.git
+$ git clone https://github.com/ashwinumbarkar/calculator.git
 $ cd calculator
 
 
