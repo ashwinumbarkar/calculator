@@ -159,3 +159,25 @@ test('divide perform', () => {
   fireEvent.click(euqlBtn);
   expect(outputScreen.textContent).toBe('0.5');
 });
+
+test('divide by zero perform', () => {
+  render(<Calculator />);
+
+  const numBtn1 = screen.getByText('1');
+  const numBtn2 = screen.getByText('0');
+  const operBtn = screen.getByText('/');
+  const euqlBtn = screen.getByText('=');
+  
+  fireEvent.click(numBtn1);
+  const outputScreen = screen.getByTestId('OutputScreen'); 
+  expect(outputScreen.textContent).toBe('1');
+  
+  fireEvent.click(operBtn);
+  expect(outputScreen.textContent).toBe('1/'); 
+  
+  fireEvent.click(numBtn2);
+  expect(outputScreen.textContent).toBe('1/0');
+
+  fireEvent.click(euqlBtn);
+  expect(outputScreen.textContent).toBe('Infinity');
+});
