@@ -181,3 +181,25 @@ test('divide by zero perform', () => {
   fireEvent.click(euqlBtn);
   expect(outputScreen.textContent).toBe('Infinity');
 });
+
+test('percentage', () => {
+  render(<Calculator />);
+
+  const numBtn1 = screen.getByText('1');
+  const numBtn2 = screen.getByText('2');
+  const operBtn = screen.getByText('%');
+  const euqlBtn = screen.getByText('=');
+  
+  fireEvent.click(numBtn1);
+  const outputScreen = screen.getByTestId('OutputScreen'); 
+  expect(outputScreen.textContent).toBe('1');
+  
+  fireEvent.click(operBtn);
+  expect(outputScreen.textContent).toBe('1%'); 
+  
+  fireEvent.click(numBtn2);
+  expect(outputScreen.textContent).toBe('1%2');
+
+  fireEvent.click(euqlBtn);
+  expect(outputScreen.textContent).toBe('1');
+});
