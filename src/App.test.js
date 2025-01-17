@@ -25,7 +25,7 @@ test('check All buttons are appeared', () => {
  
 });
 
-test('Check all button are working except', () => {
+test('Check all button are working except =', () => {
   render(<Calculator />);
 
   const numBtn1 = screen.getByText('1');

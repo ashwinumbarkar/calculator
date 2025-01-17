@@ -3,12 +3,14 @@ import './Calculator.css'
 export default function Calculator() {
     const [input,setInput]=useState("0");
     const[result,setResult]=useState(null)
-    
+    const [history,setHistory]=useState([])
+
     const handleClick=(btnvalue)=>{
        if(btnvalue==="C")
        {
         setInput("0")
         setResult(null)
+        setHistory([]); 
        }
        else if(btnvalue==="=")
        {
@@ -17,20 +19,31 @@ export default function Calculator() {
 const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
             setResult(finalres); 
             setInput(finalres); 
+            setHistory(prev=>[...prev,{input,res:finalres}])
         }
         catch(e){
             console.log("Failed to calculate")
         }
        }
        else{
-        if(input==="0"){
+        if(result!==null){
+            if (["+","-","*","/","%"].includes(btnvalue)) {
+                setInput(result + btnvalue); 
+              } else {
+                setInput(btnvalue.toString()); 
+              }
+              setResult(null);
+        }
+        else{ if(input==="0"){
             setInput(btnvalue.toString())
         }
         else{
             setInput(prev => prev + btnvalue)
-        }
+        }}
+       
        }
     }
+
   const  handlebackSpace=()=>{
     setInput((prev) => {
         if (prev.length <= 1) {
@@ -39,6 +52,7 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         return prev.slice(0, -1); 
       });
    }
+
   return (
     <>
     <div className='calculator'>
@@ -59,6 +73,7 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         }<button className="backBtn" style={{gridColumn:"span 2"}} onClick={handlebackSpace}>Backspace</button></div>
       
     </div>
+    <div>{console.log(history)}</div>
     </>
   )
 }
