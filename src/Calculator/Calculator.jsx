@@ -9,6 +9,17 @@ export default function Calculator() {
         setInput("0")
         setResult(null)
        }
+       else if(btnvalue==="=")
+       {
+        try{
+
+            setResult(eval(input)); 
+            setInput(eval(input).toString()); 
+        }
+        catch(e){
+            console.log("Failed to calculate")
+        }
+       }
        else{
         if(input==="0"){
             setInput(btnvalue.toString())
