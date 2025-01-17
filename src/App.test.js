@@ -157,7 +157,7 @@ test('divide perform', () => {
   expect(outputScreen.textContent).toBe('1/2');
 
   fireEvent.click(euqlBtn);
-  expect(outputScreen.textContent).toBe('0.5');
+  expect(outputScreen.textContent).toBe('0.500');
 });
 
 test('divide by zero perform', () => {

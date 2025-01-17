@@ -12,9 +12,10 @@ export default function Calculator() {
        else if(btnvalue==="=")
        {
         try{
-
-            setResult(eval(input)); 
-            setInput(eval(input).toString()); 
+        const input1=eval(input)
+const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
+            setResult(finalres); 
+            setInput(finalres); 
         }
         catch(e){
             console.log("Failed to calculate")
