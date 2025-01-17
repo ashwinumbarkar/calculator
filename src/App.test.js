@@ -164,7 +164,7 @@ test('divide by zero perform', () => {
   render(<Calculator />);
 
   const numBtn1 = screen.getByText('1');
-  const numBtn2 = screen.getByText('0');
+  const numBtn2 = screen.getByTestId('Calbtn0');
   const operBtn = screen.getByText('/');
   const euqlBtn = screen.getByText('=');
   
