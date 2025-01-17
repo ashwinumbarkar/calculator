@@ -25,3 +25,23 @@ test('check All buttons are appeared', () => {
  
 });
 
+test('Check all button are working except', () => {
+  render(<Calculator />);
+
+  const numBtn1 = screen.getByText('1');
+  const numBtn2 = screen.getByText('2');
+  const operBtn = screen.getByText('+');
+
+
+  
+  fireEvent.click(numBtn1);
+  const outputScreen = screen.getByTestId('output-screen'); 
+  expect(outputScreen.textContent).toBe('1');
+  
+  fireEvent.click(operBtn);
+  expect(outputScreen.textContent).toBe('1+'); 
+  
+  fireEvent.click(numBtn2);
+  expect(outputScreen.textContent).toBe('1+2');
+  
+});

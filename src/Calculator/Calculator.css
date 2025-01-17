@@ -21,6 +21,8 @@ font-size: 36px;
 font-weight: 800;
 font-family: 'Courier New', Courier, monospace;
 color: #FFFFFF;
+overflow-x: auto;
+
 }
 
 .buttonContainer{
