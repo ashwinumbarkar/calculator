@@ -3,7 +3,10 @@ import './Calculator.css'
 export default function Calculator() {
     const [input,setInput]=useState("0");
     const[result,setResult]=useState(null)
-
+    const handleClick=(btnvalue)=>{
+        if(btnvalue!=="=")
+        setInput((prev)=>prev+btnvalue)
+    }
    
   return (
     <>
@@ -15,7 +18,7 @@ export default function Calculator() {
         key={button} 
         className={["+","-","/","*","="].includes(button)?"opeerationbtn Calbtn":"Calbtn"} 
         data-testid={`Calbtn${button}`}
-        
+        onClick={()=>{handleClick(button)}}
         value={input}
         >
             {button}
