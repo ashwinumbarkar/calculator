@@ -1,5 +1,5 @@
 .calculator{
-width:200px;
+width:250px;
 padding: 5px;
 box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
 display: flex;
@@ -11,7 +11,7 @@ background-color: #1C1C1C;
 }
 
 .OutputScreen{
-width: 180px;
+width: 230px;
 text-align: right;
 border-bottom: 0.3px solid black;
 padding: 5px;
@@ -27,7 +27,7 @@ overflow-x: auto;
 
 .buttonContainer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
+    grid-template-columns: repeat(4, 1fr); /* 3 buttons per row */
     gap: 10px; /* Space between buttons */
     max-width: 300px; /* Adjust width as needed */
     margin: auto;
