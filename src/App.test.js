@@ -238,21 +238,21 @@ test('Checking backspace ', () => {
   const operBtn = screen.getByText('/');
   const backSpacebtn = screen.getByText('Backspace');
 
-  const euqlBtn = screen.getByText('=');
+  
   
   fireEvent.click(numBtn1);
   const outputScreen = screen.getByTestId('OutputScreen'); 
   expect(outputScreen.textContent).toBe('1');
     fireEvent.click(numBtn2);
-  expect(outputScreen.textContent).toBe('3'); 
+  expect(outputScreen.textContent).toBe('13'); 
   fireEvent.click(numBtn3);
-  expect(outputScreen.textContent).toBe('4'); 
+  expect(outputScreen.textContent).toBe('134'); 
   fireEvent.click(numBtn4);
-  expect(outputScreen.textContent).toBe('5'); 
+  expect(outputScreen.textContent).toBe('1345'); 
   fireEvent.click(numBtn5);
-  expect(outputScreen.textContent).toBe('6'); 
+  expect(outputScreen.textContent).toBe('13456'); 
   fireEvent.click(numBtn6);
-  expect(outputScreen.textContent).toBe('7'); 
+  expect(outputScreen.textContent).toBe('134567'); 
   fireEvent.click(operBtn);
   expect(outputScreen.textContent).toBe('134567/'); 
 

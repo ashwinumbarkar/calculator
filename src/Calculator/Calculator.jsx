@@ -31,8 +31,13 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         }
        }
     }
-  const = handlebackSpace=()=>{
-
+  const  handlebackSpace=()=>{
+    setInput((prev) => {
+        if (prev.length <= 1) {
+          return "0"; 
+        }
+        return prev.slice(0, -1); 
+      });
    }
   return (
     <>
@@ -51,7 +56,7 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         </button>
         </>)
         
-        }<button className="backBtn" style={{gridColumn:"span 2"}}>Backspace</button></div>
+        }<button className="backBtn" style={{gridColumn:"span 2"}} onClick={handlebackSpace}>Backspace</button></div>
       
     </div>
     </>
