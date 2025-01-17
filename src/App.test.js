@@ -15,6 +15,14 @@ test('Check initial Ouptut Screen 0', () => {
   expect(outputScreen.textContent).toBe("0");
 });
 
+test('History Tab', () => {
+  render(<Calculator />);
+  const outputScreen = screen.getByTestId('HistoryTab');
+  expect(outputScreen).toBeInTheDocument();
+  expect(outputScreen.textContent).toBe("History");
+});
+
+
 
 test('check All buttons are appeared', () => {
   render(<Calculator />);
