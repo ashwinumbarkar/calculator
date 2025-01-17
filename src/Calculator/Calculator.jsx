@@ -31,7 +31,9 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         }
        }
     }
-   
+  const = handlebackSpace=()=>{
+
+   }
   return (
     <>
     <div className='calculator'>

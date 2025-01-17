@@ -225,3 +225,39 @@ test('with floating value', () => {
   fireEvent.click(euqlBtn);
   expect(outputScreen.textContent).toBe('0.333');
 });
+
+test('Checking backspace ', () => {
+  render(<Calculator />);
+
+  const numBtn1 = screen.getByText('1');
+  const numBtn2 = screen.getByText('3');
+  const numBtn3 = screen.getByText('4');
+  const numBtn4 = screen.getByText('5');
+  const numBtn5 = screen.getByText('6');
+  const numBtn6 = screen.getByText('7');
+  const operBtn = screen.getByText('/');
+  const backSpacebtn = screen.getByText('Backspace');
+
+  const euqlBtn = screen.getByText('=');
+  
+  fireEvent.click(numBtn1);
+  const outputScreen = screen.getByTestId('OutputScreen'); 
+  expect(outputScreen.textContent).toBe('1');
+    fireEvent.click(numBtn2);
+  expect(outputScreen.textContent).toBe('3'); 
+  fireEvent.click(numBtn3);
+  expect(outputScreen.textContent).toBe('4'); 
+  fireEvent.click(numBtn4);
+  expect(outputScreen.textContent).toBe('5'); 
+  fireEvent.click(numBtn5);
+  expect(outputScreen.textContent).toBe('6'); 
+  fireEvent.click(numBtn6);
+  expect(outputScreen.textContent).toBe('7'); 
+  fireEvent.click(operBtn);
+  expect(outputScreen.textContent).toBe('134567/'); 
+
+  fireEvent.click(backSpacebtn);
+  expect(outputScreen.textContent).toBe('134567'); 
+ 
+ 
+});
