@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import './Calculator.css'
 export default function Calculator() {
-    const [input,setInput]=useState(0);
+    const [input,setInput]=useState("0");
     const[result,setResult]=useState(null)
-
-
     const handleClick=(btnvalue)=>{
        if(btnvalue==="C")
        {
         setInput("0")
         setResult(null)
        }
-
        else{
-        if(btnvalue==="0"){
+        if(input==="0"){
             setInput(btnvalue.toString())
         }
         else{
