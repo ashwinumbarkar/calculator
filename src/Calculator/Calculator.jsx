@@ -54,11 +54,11 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
    }
 
   return (
-    <>
+    <div className='mainContainer'>
     <div className='calculator'>
       <div className='OutputScreen' data-testid="OutputScreen">{result !== null ? result : input || 0}</div>
       <div className='buttonContainer' data-testid="buttonContainer">{
-        ["C",0,1,2,3,4,5,6,7,8,9,".","+","-","/","*","%","=",].map((button)=><>
+        ["C",0,1,2,3,4,5,6,7,8,9,".","+","-","/","*","%","=",].map((button)=>
         <button 
         key={button} 
         className={["+","-","/","*","%","="].includes(button)?"opeerationbtn Calbtn":"Calbtn"} 
@@ -68,12 +68,20 @@ const finalres=input1 % 1===0 ?input1.toString() :input1.toFixed(3)
         >
             {button}
         </button>
-        </>)
+        )
         
         }<button className="backBtn" style={{gridColumn:"span 2"}} onClick={handlebackSpace}>Backspace</button></div>
       
     </div>
-    <div className='HistoryTab' data-testid='HistoryTab'>History</div>
-    </>
+    <div className='HistoryTab' data-testid='HistoryTab'>
+        <h3>History</h3>
+        <div className='historyCardContainer' style={{flex:1}}>  {history && history.length>0 ? history.map((h)=><div className='historycard'><p>{h.input}{"  "}={"  "}{h.res}</p></div>):<p style={{textAlign:'center',padding:"5px"}}>There's no history yet </p>  }</div>
+        
+      
+
+        {history.length>0 && <span className='DeleteHistory' onClick={()=>{setHistory([])}}>Delete History</span>}
+        {console.log(history)}
+    </div>
+    </div>
   )
 }
