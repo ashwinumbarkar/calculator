@@ -60,4 +60,22 @@ transition: all 0.3s ease-in-out;
     color: Orange;
     background-color: #000000 ;
     border: 1px solid orange;
+ }
+
+.backBtn{
+padding: 10px;
+   
+    
+    height: 50px;
+    gap:20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #505050 ;
+    color: #FFFFFF ;
+    border: none;
+    transition: all 0.3s ease-in-out;
+
     }
