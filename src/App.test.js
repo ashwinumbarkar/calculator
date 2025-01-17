@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen,fireEvent } from '@testing-library/react';
 import App from './App';
 import Calculator from './Calculator/Calculator';
 
@@ -18,7 +18,7 @@ test('Check initial Ouptut Screen 0', () => {
 
 test('check All buttons are appeared', () => {
   render(<Calculator />);
- ["C",0,1,2,3,4,5,6,7,8,9,"+","-","/","*"].map((singlebtn)=>{
+ ["C",0,1,2,3,4,5,6,7,8,9,"+","-","/","*","="].map((singlebtn)=>{
   const outputScreen = screen.getByTestId(`Calbtn${singlebtn}`);
   expect(outputScreen).toBeInTheDocument();
  } )
