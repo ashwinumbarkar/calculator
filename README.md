@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React-based calculator application built with test-driven development (TDD) principles. The app supports basic arithmetic operations and includes a responsive interface.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Features**
+- Perform basic arithmetic operations: Addition, Subtraction, Multiplication, Division.
+- Clear the input and reset the calculator.
+- Displays current input and results.
+- History tab to view all previous calculations until explicitly deleted or cleared using the "C" button.
+- Fully tested using React Testing Library.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Project Structure**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The main files in the `src` directory include:
 
-### `npm test`
+| File/Folder       | Description                                |
+|-------------------|--------------------------------------------|
+| `App.js`          | Main component for the calculator app.     |
+| `App.css`         | Styling for the calculator components.     |
+| `App.test.js`     | Unit tests for the app's functionality.    |
+| `index.js`        | Entry point for the React application.     |
+| `index.css`       | Global CSS styles.                        |
+| `setupTests.js`   | Test environment setup for Jest.           |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **Installation**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the Repository
 
-### `npm run eject`
+$ git clone https://github.com/ashwinumbarkar/TDD-Calculator.git
+$ cd calculator
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Install Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+$ npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### 3. Run the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app will be available at `http://localhost:3000`.
 
-### Code Splitting
+### 4. Run Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+$ npm test
 
-### Analyzing the Bundle Size
+This command runs all test cases using Jest and React Testing Library.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## **Testing**
+The application includes unit tests to ensure proper functionality:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Check initial output:** Ensures the calculator displays `0` on load.
+- **Check button rendering:** Verifies that all buttons are rendered correctly.
+- **Check button functionality:** Tests input updates and operations like addition.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## **Dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Dependency                | Version |
+|---------------------------|---------|
+| `react`                   | 18.3.1  |
+| `react-dom`               | 18.3.1  |
+| `react-scripts`           | 5.0.1   |
+| `@testing-library/react`  | 16.2.0  |
+| `@testing-library/jest-dom` | 6.6.3 |
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
